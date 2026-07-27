@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-unlock"
+version = "1.0.0"
+description = "Recover forgotten PDF passwords and write decrypted copies."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "HackerX Official", email = "hackerx.offical@gmail.com" },
+]
+keywords = ["pdf", "password", "recovery", "security", "hackerx"]
+dependencies = [
+  "pikepdf>=9.0.0",
+  "pycryptodome>=3.20.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/HackerX-offical/PDF-Unlock"
+Repository = "https://github.com/HackerX-offical/PDF-Unlock"
+Issues = "https://github.com/HackerX-offical/PDF-Unlock/issues"
+
+[project.scripts]
+unlock-pdf = "pdf_unlock.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pdf_unlock*"]
+
+[tool.setuptools.package-data]
+pdf_unlock = ["data/*.txt"]
